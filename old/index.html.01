@@ -10,9 +10,7 @@
 	<body>
 		<main>
 			<div class="btn-container">
-				<button class='btn btn-01' type="button">Click me, I'm XHR!</button>
-				<button class='btn btn-02' type="button">Click me, I'm Promise!</button>
-				<button class='btn btn-03' type="button">Click me, I'm As/Aw!</button>
+				<button class='btn-01' type="button">Click me!</button>
 			</div>
 		</main>
 	<script type="module" src="./js/run.js"></script>

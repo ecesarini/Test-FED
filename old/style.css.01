@@ -9,18 +9,14 @@ body {
 }
 
 .btn-container {
-	width: 20vw;
-	min-height: 30vh;
+	width: 10vw;
 	margin: auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
 }
 
-.btn {
+.btn-01 {
 	width: 100%;
-	/*margin: 100px auto 0 auto;*/
-	padding: 10px;
+	margin: 100px auto 0 auto;
+	padding: 5px;
 	color: black;
 	background-color: grey;
 	font-size: 15px;
@@ -28,12 +24,8 @@ body {
 	border: 3px solid black;
 }
 
-.btn:hover {
+.btn-01:hover {
 	cursor: pointer;
 	background-color: lightgray;
 	border: 2px solid darkgray;
-}
-
-.my-big-image {
-	margin: 30px 0;
 }

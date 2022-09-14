@@ -10,6 +10,11 @@ function showImg(type, classTg) {
 	tg.after(image);
 }
 
+function tgClick(clTg, cb) {
+	document.querySelector(clTg).addEventListener('click', () => cb);
+}
+
+
 // CALLBACK way:
 export function asyncXML(classTg, link, type) {
 	function getRef(link, type, callback) {
@@ -17,14 +22,13 @@ export function asyncXML(classTg, link, type) {
 		req.open('GET', link);
 		req.responseType = type;
 
-		req.addEventListener('click', () => callback(req.response, classTg));
+		req.addEventListener('load', () => callback(req.response, classTg));
 		req.send();
 	}
-	const tg = document.querySelector(classTg);
-	tg.addEventListener('click', () => getRef(link, type, showImg));
+	//document.querySelector(classTg).addEventListener('click', () => getRef(link, type, showImg));
+	tgClick(classTg, getRef(link, type, showImg));
 }
 
-/*
 // PROMISE way:
 export function asyncPro(classTg, link, type) {	
 	fetch(link)
@@ -36,4 +40,3 @@ export function asyncPro(classTg, link, type) {
 export function asyncASAW(classTg, link, type) {
 
 }
-*/
