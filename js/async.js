@@ -9,6 +9,9 @@ function showImg(type, classTg) {
 	image.src = url;
 	tg.after(image);
 }
+function waitClk(req, tg) {
+	document.querySelector(tg).addEventListener('click', () => showImg(req, tg));
+}
 
 // CALLBACK way:
 export function asyncXML(classTg, link, type) {
@@ -17,23 +20,29 @@ export function asyncXML(classTg, link, type) {
 		req.open('GET', link);
 		req.responseType = type;
 
-		req.addEventListener('click', () => callback(req.response, classTg));
+		req.addEventListener('load', () => callback(req.response, classTg));
 		req.send();
 	}
-	const tg = document.querySelector(classTg);
-	tg.addEventListener('click', () => getRef(link, type, showImg));
+
+	getRef(link, type, waitClk);
 }
 
-/*
 // PROMISE way:
 export function asyncPro(classTg, link, type) {	
 	fetch(link)
 	.then(r => r[type]())
-	.then(myType => tgClick(classTg, showImg(myType, classTg)));
+	.then(myType => waitClk(myType, classTg));
 }
 
 // ASYNC/AWAIT way:
-export function asyncASAW(classTg, link, type) {
-
+export async function asyncASAW(classTg, link, type) {
+	let req = await fetch(link);
+	req = await req[type]();
+	/*const getReq = async (l, t) => {
+		let r1 = await fetch(l);
+		let r2 = await r1[t]();
+		return r2;
+	};
+	const req = await getReq(link, type);*/
+	waitClk(req, classTg);
 }
-*/
