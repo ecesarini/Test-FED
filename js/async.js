@@ -31,7 +31,7 @@ export function asyncXML(classTg, link, type) {
 export function asyncPro(classTg, link, type) {	
 	fetch(link)
 	.then(r => r[type]())
-	.then(myType => waitClk(myType, classTg));
+	.then(myType => waitClk(myType, classTg)).catch(e => console.log(e.message));
 }
 
 // ASYNC/AWAIT way:
