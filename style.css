@@ -44,10 +44,12 @@ button:hover {
 .script-cbpro-container {
 	width: 50%;
 	margin: 70px auto 0 auto;
-	text-align: center;
+	/*text-align: center;*/ /*Button is 'inline' by default and it's not affected by margins*/
 
 }
 .btn-cbpro {
+	display: block;
+	margin: auto;
 	width: 50%;
 	padding: 20px 0;
 	font-size: 20px;
