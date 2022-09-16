@@ -13,6 +13,6 @@ if(set === "async") {
     asy.asyncPro(".btn-02", imgUrl2, "blob");
     asy.asyncASAW(".btn-03", imgUrl3, "blob");
 } else if(set === "cbpro") {
-    const btnG= document.querySelector(".btn-gen");
+    const btnG= document.querySelector(".btn-cbpro-01");
     cbPro.bootstrap("/js/myscript.js", btnG);
 }
