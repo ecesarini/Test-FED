@@ -1,5 +1,6 @@
-import * as asy from "/js/async.js";
-import * as cbPro from "/js/cbpro.js";
+import * as asy from "/js/asyncpro/async.js";
+import * as cbPro from "/js/asyncpro/cbpro.js";
+import * as build from "/js/build.js";
 
 let set = "cbpro";
 
@@ -7,6 +8,7 @@ const imgUrl1 = "https://upload.wikimedia.org/wikipedia/commons/d/d2/Saturn_-_Hi
     imgUrl2 = "https://upload.wikimedia.org/wikipedia/commons/5/5e/M104_ngc4594_sombrero_galaxy_hi-res.jpg",
     imgUrl3 = "https://upload.wikimedia.org/wikipedia/commons/c/ca/The_Blue_Marble_4463x4163.jpg";
 
+build.createNav();
 
 if(set === "async") {    
     asy.asyncXML(".btn-01", imgUrl1, "blob");
@@ -15,7 +17,7 @@ if(set === "async") {
 } else if(set === "cbpro") {
     const btnCb = document.querySelector(".btn-cbpro-01"),
         btnPro = document.querySelector(".btn-cbpro-02");
-    cbPro.bootstrapCb("/js/myscript.js", btnCb);
+    cbPro.bootstrapCb("/js/asyncpro/myscript.js", btnCb);
     cbPro.bootstrapPro("Ecco la tua stringa", 5000, btnPro);
     //cbPro.bootstrapPro("", 2000, btnPro);
 }
