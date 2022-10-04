@@ -1,0 +1,28 @@
+body {
+    height: 700px;
+    main {
+        overflow-y: auto;
+        height: 1000px;
+        .test-container {
+            width: 100%;
+            //height: 100%;
+            margin-top: 20px;
+            span {
+                /*height: 400px*;*/
+                width: 400px;
+                background-color: darkcyan;
+            }
+        }
+
+
+        .overflow-container {
+            margin-top: 10px;
+            height: 100%;
+            width: 200px;
+            &>p {
+                height: 100%;
+                //overflow-y: auto;
+            }
+        }
+    }
+}

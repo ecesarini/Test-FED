@@ -1,11 +1,26 @@
-.test-container {
-    width: 100%;
-    height: 100%;
-    margin-top: 200px;
+body {
+  height: 700px;
+}
+body main {
+  overflow-y: auto;
+  height: 1000px;
+}
+body main .test-container {
+  width: 100%;
+  margin-top: 20px;
+}
+body main .test-container span {
+  /*height: 400px*;*/
+  width: 400px;
+  background-color: darkcyan;
+}
+body main .overflow-container {
+  margin-top: 10px;
+  height: 100%;
+  width: 200px;
+}
+body main .overflow-container > p {
+  height: 100%;
 }
 
-span {
-    height: 400px;
-    width: 400px;
-    background-color: darkcyan;
-}
+/*# sourceMappingURL=gentest.css.map */

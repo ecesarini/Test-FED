@@ -14,6 +14,62 @@
         <div class="test-container">
             <span>Sono uno span</span>
         </div>
+        <div class="overflow-container">
+            <p>
+            Here is the code for the client side of the application:
+            from socket import *
+            serverName = ’hostname’
+            serverPort = 12000
+            clientSocket = socket(AF_INET, SOCK_DGRAM)
+            message = raw_input(’Input lowercase sentence:’)
+            clientSocket.sendto(message.encode(),(serverName, serverPort))
+            modifiedMessage, serverAddress = clientSocket.recvfrom(2048)
+            print(modifiedMessage.decode())
+            clientSocket.close()
+            Now let’s take a look at the various lines of code in UDPClient.py.
+            from socket import *
+            The socket module forms the basis of all network communications in Python. By
+            including this line, we will be able to create sockets within our program.
+            serverName = ’hostname’
+            serverPort = 12000
+            The first line sets the variable serverName to the string ‘hostname’. Here, we provide a string containing either the IP address of the server (e.g., “128.138.32.126”)
+            or the hostname of the server (e.g., “cis.poly.edu”). If we use the hostname, then a
+            DNS lookup will automatically be performed to get the IP address.) The second line
+            sets the integer variable serverPort to 12000.
+            clientSocket = socket(AF_INET, SOCK_DGRAM)
+            This line creates the client’s socket, called clientSocket. The first parameter indicates the address family; in particular, AF_INET indicates that the
+            underlying network is using IPv4. (Do not worry about this now—we will discuss IPv4 in Chapter 4.) The second parameter indicates that the socket is of
+            type SOCK_DGRAM, which means it is a UDP socket (rather than a TCP socket).
+            Note that we are not specifying the port number of the client socket when we
+            create it; we are instead letting the operating system do this for us. Now that the
+            client process’s door has been created, we will want to create a message to send
+            through the door.
+            message = raw_input(’Input lowercase sentence:’)
+            raw_input() is a built-in function in Python. When this command is executed,
+            the user at the client is prompted with the words “Input lowercase sentence:” The
+            user then uses her keyboard to input a line, which is put into the variable message.
+            Now that we have a socket and a message, we will want to send the message through
+            the socket to the destination host.
+            clientSocket.sendto(message.encode(),(serverName, serverPort))
+            In the above line, we first convert the message from string type to byte type, as we
+            need to send bytes into a socket; this is done with the encode() method. The
+            method sendto() attaches the destination address (serverName, serverPort)
+            to the message and sends the resulting packet into the process’s socket,
+            clientSocket. (As mentioned earlier, the source address is also attached to
+            the packet, although this is done automatically rather than explicitly by the code.)
+            Sending a client-to-server message via a UDP socket is that simple! After sending
+            the packet, the client waits to receive data from the server.
+            modifiedMessage, serverAddress = clientSocket.recvfrom(2048)
+            With the above line, when a packet arrives from the Internet at the client’s socket, the
+            packet’s data is put into the variable modifiedMessage and the packet’s source
+            address is put into the variable serverAddress. The variable serverAddress
+            contains both the server’s IP address and the server’s port number. The program
+            UDPClient doesn’t actually need this server address information, since it already
+            knows the server address from the outset; but this line of Python provides the server
+            address nevertheless. The method recvfrom also takes the buffer size 2048 as
+            input. (This buffer size works for most purposes.)
+            </p>
+        </div>
 
     </main>
     <script type="module" src="/js/gentest/run.js"></script>
