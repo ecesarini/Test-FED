@@ -1,9 +1,19 @@
 body {
-  height: 700px;
+  position: relative;
+  height: 100vh;
+}
+body header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: unset;
 }
 body main {
+  position: relative;
+  top: 77px;
   overflow-y: auto;
-  height: 1000px;
+  height: calc(100% - 77px);
 }
 body main .test-container {
   width: 100%;
