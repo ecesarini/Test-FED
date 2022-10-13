@@ -1,6 +1,90 @@
 $header-dim: calc(57px + 20px);
-$main-h: calc(100% - $header-dim);
+$main-h: calc(100vh - $header-dim);
 
+button {
+    padding: 0;
+}
+// Sidebar
+.sidebar-btn {
+    height: 50px;
+    width: 30%;
+    margin: 0 auto 0 20px;
+    .gt-btn {
+        width: 100%;
+        font-size: 30px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: red;
+        background-color: greenyellow;
+        border: 3px solid red;
+        border-radius: 3px;
+    }    
+}
+
+.sidebar {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    max-width: 40%;
+    width: 0;
+    color: darkred;
+    background-color: cyan;
+    transition: visibility 0.7s linear, width 0.5s linear;
+    .sidebar-content {
+        //transition: visibility 0.7s linear, width 0.7s linear;
+        //* {visibility: inherit};
+        height: 40vh;
+        width: 100%;
+        .sidebar-btn-close {
+            display: block;
+            height: 30px;
+            width: 30px;
+            margin: 10px 10px 0 auto;
+            color: white;
+            font-size: large;
+            font-weight: 800;
+            background-color: darkblue;
+            border: 2px solid white;
+            border-radius: 3px;
+        }
+        ul {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            li {
+                height: 10%;
+                width: 70%;
+                padding-left: 10px;
+                font-size: 30px;
+                font-weight: 700;
+                border: 2px solid darkred;
+                background-color: wheat;
+            }
+
+        }
+
+    }
+}
+// Handle sidebar
+@keyframes sidebar-slider {
+    from {width: 0;}
+    to {width: 100%;}
+}
+.sidebar-on {
+    //animation: sidebar-slider 2s;
+    visibility: visible;
+    width: 100%;
+}
+.sidebar-off {
+    //animation: sidebar-slider 2s reverse;
+    visibility: hidden;
+    width: 0;
+}
+
+// Content
 body {
     position: relative;
     //height: 700px;
