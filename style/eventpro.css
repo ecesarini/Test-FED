@@ -1,0 +1,32 @@
+.main-container {
+  width: 50%;
+}
+
+.fb-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 300px;
+}
+
+.ep-btn {
+  width: 30%;
+  font-size: 2em;
+  text-align: center;
+  background-color: white;
+  border: 3px solid lightcoral;
+  border-radius: 5px;
+}
+.ep-btn:hover {
+  background-color: lightblue;
+  border: 5px solid red;
+}
+.ep-btn.ep-btn-1 {
+  color: darkblue;
+}
+.ep-btn.ep-btn-2 {
+  color: darkolivegreen;
+}
+
+/*# sourceMappingURL=eventpro.css.map */
