@@ -1,5 +1,5 @@
-import * as asy from "async.js";
-import * as cbPro from "cbpro.js";
+import * as asy from "./async.js";
+import * as cbPro from "./cbpro.js";
 
 let set = "cbpro";
 
