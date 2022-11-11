@@ -1,4 +1,4 @@
-import * as build from "./js/build.js";
-import * as global from "./js/global.js";
+import * as build from "build.js";
+import * as global from "global.js";
 
 build.createNav(global.navObj);
